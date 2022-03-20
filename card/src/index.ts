@@ -2,8 +2,14 @@ import express from 'express'
 import mongoose from 'mongoose'
 import log from '../utils/logger'
 
+import { paymentRouter } from './routes/card-payment'
+
+
 const app = express()
 app.use(express.json())
+
+//Routes
+app.use(paymentRouter)
 
 const start = async () => {
 
